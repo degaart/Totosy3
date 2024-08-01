@@ -6,6 +6,39 @@
 
 namespace totosy {
 
+    namespace inner {
+        class Window {
+            protected:
+                HWND _hWnd;
+                std::wstring _className;
+            public:
+                virtual ~Window() {}
+                HWND hwnd() const;
+                const wchar_t* className() const;
+        };
+
+        class EventHandler {
+            public:
+                virtual ~EventHandler() {}
+            protected:
+                virtual LRESULT CALLBACK onEvent(UINT msg, WPARAM wparam, LPARAM lparam) = 0;
+        };
+
+        class Frame : public Window, public EventHandler {
+            public:
+        };
+
+        class Control : public Window {
+            public:
+
+        };
+
+        class Button : public Control {
+            public:
+
+        };
+    }
+
     class Window {
         public:
             Window();

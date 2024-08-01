@@ -5,6 +5,10 @@
 
 namespace totosy {
 
+/*
+    Smaller algorithm:
+        https://stackoverflow.com/questions/73758747/looking-for-the-description-of-the-algorithm-to-convert-utf8-to-utf16
+*/
 std::wstring toWideChar(const char* s, int len)
 {
     int size = MultiByteToWideChar(CP_UTF8,
